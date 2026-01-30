@@ -39,6 +39,8 @@ h6 { font-size: var(--h6-size); }
 p {
   font-size: 1.2rem;
   font-weight: 300;
+  line-height: 2;
+  word-spacing: 0.3rem;
 }
 
 div {
@@ -54,15 +56,15 @@ div {
 }
 
 .navbar {
+  font-size: 1rem;
   padding: 1rem 3rem;
   font-family: sans-serif;
-  font-weight: 700;;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-align: center;
 }
 
 .name {
-  position: relative;
   text-align: center;
   color: white;
 }
@@ -78,6 +80,68 @@ div {
   width: 100%;
   margin-top: 1rem;
   gap: 1rem;
+}
+
+/* hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* hamburger icon */
+.menu-icon {
+  color: white;
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+/* --- mobile view --- */
+@media (max-width: 768px) {
+  /* first row: name + hamburger on one line */
+  .navbar {
+    display: flex;
+    flex-direction: column; /* allows wrapping below */
+    width: 100%;
+  }
+
+  /* top row container for name + hamburger */
+  .navbar-header {
+    display: flex;
+    justify-content: space-between; /* name left, hamburger right */
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .pages {
+    display: none;
+    flex-direction: column;
+    background: #121e27;
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: 0.5rem;
+  }
+
+  .pages div {
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  .pages {
+    display: none;
+  }
+
+  .pages.show {
+    display: flex;
+  }
+
 }
 
 /* Removing the underline line and adding a hover on mouse */
@@ -269,6 +333,7 @@ h1>div, h2>div, h3>div, h4>div, h5>div {
 
 .career {
   margin-bottom: 2rem;
+  margin-right: 2rem;
 }
 
 .career_title {
@@ -305,7 +370,8 @@ h1>div, h2>div, h3>div, h4>div, h5>div {
 
 @media only screen and (max-width: 768px) {
   .text {
-    margin-top: 5vh !important;
+    margin-top: 15vh !important;
+    margin-right: 2rem;
   }
 }
 
@@ -322,7 +388,6 @@ h1>div, h2>div, h3>div, h4>div, h5>div {
 
 /* content styles */
 .bio, .projects{
-  max-width: 1100px;
   width: 100%;
   margin: auto;
   background: rgb(255, 255, 255);
@@ -591,6 +656,7 @@ menu, ol, ul {
     max-width: 500px;
     margin: auto;
   }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -618,4 +684,77 @@ menu, ol, ul {
     margin: auto;
     background: transparent;
   }
+}
+
+
+/* About and contact pages styles */
+.about {
+  color: #121e27;
+  background: #fff;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+.about-body, .contact-body{
+  min-height: 75vh;
+  max-width: 1100px;
+  margin: auto;
+  color: #121e27;
+  padding: clamp(6vh, 2rem, 12vh) 1rem 22vh;
+}
+
+.cv {
+  width: 10rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 2rem;
+  background-color: black;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cv:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+p strong {
+  font-weight: 550 !important;
+  font-style: italic; 
+}
+
+.contact-intro {
+  color: #ed6955;
+  max-width: 100%;
+}
+
+.contact-body {
+    grid-template-areas: 
+      "image"
+      "body"
+    ;
+    display: grid;
+    padding: 1.2rem 2rem;
+  }
+
+@media only screen and (max-width: 768px) {
+
+  .about-body {
+    padding-top: 0%;
+ }
+
+ .contact-img {
+  max-width: 22rem;
+ }
+
+}
+
+@media only screen and (min-width: 768px) {
+  .contact-body {
+    display: grid;
+    grid-template-columns: 2.5fr 3fr;
+    grid-template-areas:
+      "body image"
+  }
+
 }
