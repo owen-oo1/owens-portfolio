@@ -37,7 +37,8 @@ const app = express();
 const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0';
 
 // Middleware to parse JSON and URL-encoded data
 app.use(bodyParser.json());
@@ -64,7 +65,6 @@ app.get('/contact', (req, res) => {
     res.render("pages/contact");
 })
 
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server is running at port ${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
-
