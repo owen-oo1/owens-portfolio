@@ -1,0 +1,331 @@
+@import url('https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Cool & Professional — Light Mode */
+  --bg: #f8f9fc;
+  --bg-alt: #ffffff;
+  --fg: #1a1f36;
+  --muted: #6b7394;
+  --subtle: #eef1f6;
+  --border: rgba(26, 31, 54, 0.08);
+
+  /* Accent gradient: teal → electric blue */
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+  --accent-2: #06b6d4;
+  --gradient-accent: linear-gradient(135deg, #06b6d4, #0ea5e9, #6366f1);
+  --gradient-accent-soft: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(99, 102, 241, 0.08));
+
+  /* Dark surfaces */
+  --dark-bg: #0f172a;
+  --dark-bg-light: #1e293b;
+  --dark-border: rgba(255, 255, 255, 0.06);
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px rgba(14, 165, 233, 0.08);
+
+  /* Misc */
+  --radius: 16px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --max-width: 1100px;
+  --h1-size: clamp(2.2rem, 6vw, 4rem);
+  --h2-size: 1.5rem;
+  --h3-size: 1.25rem;
+  --side-padding: clamp(1rem, 7vw, 200px);
+
+  color-scheme: light;
+}
+
+/* ============ DARK MODE ============ */
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-alt: #1e293b;
+  --fg: #e2e8f0;
+  --muted: #94a3b8;
+  --subtle: #1e293b;
+  --border: rgba(255, 255, 255, 0.06);
+
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --accent-2: #22d3ee;
+  --gradient-accent: linear-gradient(135deg, #22d3ee, #38bdf8, #818cf8);
+  --gradient-accent-soft: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(129, 140, 248, 0.1));
+
+  --dark-bg: #020617;
+  --dark-bg-light: #0f172a;
+
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px rgba(56, 189, 248, 0.06);
+
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s var(--ease);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+p strong {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--fg);
+}
+
+/* Utility */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.social-icons a:hover {
+  transform: scale(1.15) translateY(-2px);
+  background: var(--gradient-accent);
+  background: var(--accent);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.3);
+}
+
+.social-icons svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--fg);
+  transition: fill 0.3s var(--ease);
+}
+
+.social-icons a:hover svg {
+  fill: #fff;
+}
+
+/* Dark social icons variant */
+.social-icons--dark a {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.social-icons--dark svg {
+  fill: #94a3b8;
+}
+
+.social-icons--dark a:hover {
+  background: var(--accent);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+}
+
+.social-icons--dark a:hover svg {
+  fill: #fff;
+}
+
+/* Skill Tags */
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  background: var(--gradient-accent);
+  color: #fff;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: default;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
+}
+
+.skill-tag:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+}
+
+/* Section spacing */
+.section {
+  padding: 100px 0;
+}
+
+/* ============ SCROLL ANIMATIONS ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-in {
+  animation: fadeInUp 0.8s var(--ease) both;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+
+/* ============ MICRO-INTERACTIONS ============ */
+.btn-press {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-press:active {
+  transform: scale(0.96);
+}
+
+.hover-lift {
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
