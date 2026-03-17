@@ -17,6 +17,8 @@ const skills = [
   { name: 'Shopify', category: 'CMS' },
   { name: 'HTML', category: 'Frontend' },
   { name: 'CSS', category: 'Frontend' },
+  { name: 'Next.js', category: 'Hybrid' },
+  { name: 'Typescript', category: 'Hybrid' }
 ];
 
 const Skills = () => {

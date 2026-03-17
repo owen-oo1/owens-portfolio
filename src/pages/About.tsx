@@ -14,7 +14,7 @@ const About = () => {
           <h1 className="about-title reveal">
             Tech helps me transform the world to a better place.
           </h1>
-          <a href="/public/documents/owens_cv.pdf" className="cv-btn btn-press reveal delay-1">
+          <a href="/documents/owens_cv.pdf" className="cv-btn btn-press reveal delay-1">
             Download my CV
           </a>
 
