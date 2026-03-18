@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import './Skills.css';
 
 const skills = [
@@ -52,9 +53,9 @@ const Skills = () => {
               In the process of learning animation we explored the big tech realm and that's when we discovered 
               that there's a lot we didn't know and were eager to explore.
             </p>
-            <a href="/about" className="read-more-link reveal delay-4">
+            <Link to="/about" className="read-more-link reveal delay-4">
               Keep reading about me →
-            </a>
+            </Link>
           </div>
         </div>
       </div>
