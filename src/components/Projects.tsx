@@ -1,4 +1,5 @@
 import './Projects.css';
+import Projects_contents from './projects_contents';
 
 const Projects = () => {
   return (
@@ -7,32 +8,25 @@ const Projects = () => {
         <h2 className="projects-heading reveal">
           <span className="accent-text">Projects</span>
         </h2>
-        <div className="project-card reveal-scale delay-1">
-          <div className="project-content">
-            <span className="project-label">Hardware & Software Project</span>
-            <h3 className="project-title">
-              WIFI/BT Powered Remote Car Mimicking Kenyan Matatu Culture
-            </h3>
-            <div className="project-tags">
-              {['Arduino', 'C++/C', 'React', 'JavaScript', 'Python'].map((tag) => (
-                <span key={tag} className="skill-tag">{tag}</span>
-              ))}
-            </div>
-            <a href="/projects/iot" className="project-btn btn-press">
-              <span className="project-btn-front">View project</span>
-              <span className="project-btn-shadow">View project</span>
-            </a>
-          </div>
-          <div className="project-image">
-            <img
-              src="/images/car2.jpeg"
-              alt="WiFi/BT powered remote car"
-              loading="lazy"
-            />
-          </div>
-        </div>
+        <Projects_contents 
+          category = 'Hardware & Software Project'
+          title = 'WIFI/BT Powered Remote Car Mimicking Kenyan Matatu Culture'
+          tags = {['Arduino', 'C++/C', 'React', 'JavaScript', 'Python']}
+          image = "/images/car2.jpeg"
+          alt = "WiFi/BT powered remote car"
+          href = "/projects/iot"
+        />
+        <Projects_contents 
+          category = 'Full-Stack Web & Mobile Application'
+          title = 'Smart Shopping List App for Retail Analytics'
+          tags = {['TypeScript', 'PostgreSQL', 'HTML', 'JavaScript', 'CSS', 'Tailwind CSS', 'Express.js']}
+          image = "/images/retail_main.jpeg"
+          alt = "A man using a smart shopping list app in a supermarket"
+          href = "/projects/retail"
+        />
       </div>
     </section>
+    
   );
 };
 
