@@ -19,7 +19,11 @@ const skills = [
   { name: 'HTML', category: 'Frontend' },
   { name: 'CSS', category: 'Frontend' },
   { name: 'Next.js', category: 'Hybrid' },
-  { name: 'Typescript', category: 'Hybrid' }
+  { name: 'Apache Airflow', category: 'Orchestration' },
+  { name: 'CI/CD', category: 'Data eng' },
+  { name: 'Docker', category: 'DevOps' },
+  { name: 'Apache Spark', category: 'Big Data' },
+  { name: 'ETL', category: 'Data Eng' },
 ];
 
 const Skills = () => {
