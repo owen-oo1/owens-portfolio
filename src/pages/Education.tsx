@@ -33,6 +33,22 @@ const items: TimelineItem[] = [
     tags: ['Cyber Security', 'Networking', 'Cryptography'],
   },
   {
+    status: 'Ongoing',
+    statusTone: 'ongoing',
+    date: 'March 2026 — aug 2026',
+    title: 'Data Engineering',
+    subtitle: 'ALX Africa',
+    bullets: [
+      'Designed and implemented ETL pipelines to extract, transform and load data into PostgreSQL databases.',
+      'Automated and scheduled data workflows using Apache Airflow for reliable pipeline execution',
+      'Developed Python scripts for data ingestion, cleaning, transformation and validation.',
+      'Wrote optimized SQL queries to support data extraction, aggregation and reporting requirements.',
+      'Containerized data engineering workflows using Docker to ensure consistent and reproducible development environments.'
+    ],
+    tags: ['Python', 'Apache Airflow', 'Docker', 'ETL/ELT', 'CI/CD Data Pipelines', 'Data Warehousing/Lakes', 'Apache Spark'
+]
+  },
+  {
     status: 'Completed',
     statusTone: 'completed',
     date: 'March 2025 — Dec 2025',
@@ -64,19 +80,22 @@ const items: TimelineItem[] = [
 ]
   },
   {
-    status: 'Ongoing',
-    statusTone: 'ongoing',
-    date: 'March 2026 — aug 2026',
-    title: 'Data Engineering',
-    subtitle: 'ALX Africa',
+    status: 'Completed',
+    statusTone: 'completed',
+    date: 'Feb 2023 — Dec 2024',
+    title: '100 Days of Web Development Bootcamp',
+    subtitle: 'Udemy',
     bullets: [
-      'Designed and implemented ETL pipelines to extract, transform and load data into PostgreSQL databases.',
-      'Automated and scheduled data workflows using Apache Airflow for reliable pipeline execution',
-      'Developed Python scripts for data ingestion, cleaning, transformation and validation.',
-      'Wrote optimized SQL queries to support data extraction, aggregation and reporting requirements.',
-      'Containerized data engineering workflows using Docker to ensure consistent and reproducible development environments.'
+      'Built responsive and accessible web applications using HTML5, CSS3, Flexbox, CSS Grid, Bootstrap and modern JavaScript.',
+      'Developed full-stack applications with Node.js, Express, EJS, PostgreSQL and RESTful APIs, implementing complete CRUD functionality.',
+      'Implemented secure authentication and authorization systems, applying best practices for user management, session handling and application security.',
+      'Created dynamic, component-based user interfaces with React while integrating client-side and server-side technologies into cohesive applications.',
+      'Applied Git and GitHub for version control, collaborative development and maintaining professional software development workflows.',
+      'Explored decentralized application (dApp) development by integrating Web3 concepts and the Internet Computer (ICP) blockchain into modern web applications.',
+      'Completed hands-on projects that strengthened problem-solving, debugging, deployment and full-stack software engineering skills through real-world development scenarios.'
     ],
-    tags: ['Python', 'Apache Airflow', 'Docker', 'ETL/ELT', 'CI/CD Data Pipelines', 'Data Warehousing/Lakes', 'Apache Spark'
+    tags: ['HTML', 'CSS', 'FLEXBOX & GRID', 'Bootstrap', 'Javascript', 'Nodejs', 'JQuery', 'Express', 'Ejs', 'Git & Github', 'REST', 'PostegreSQL', 'Authentication & security', 
+            'React', 'Web3', 'ICP Blockchain'
 ]
   },
 ];

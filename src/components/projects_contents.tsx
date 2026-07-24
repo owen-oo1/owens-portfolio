@@ -1,4 +1,5 @@
 import './Projects.css';
+import{ Link } from 'react-router-dom';
 
 const Projects_contents = (props) => {
   return (
@@ -11,7 +12,7 @@ const Projects_contents = (props) => {
         </div>
         <span className="project-label">{props.category}</span>
         <h3 className="project-title">{props.title}</h3>
-        <div style = {{marginBottom: '1rem'}}><a href = '/projects'>Read More → </a></div>
+        <div style = {{marginBottom: '1rem'}}><Link to="/projects">Read More →</Link></div>
         <div className="project-tags">
             {props.tags.map((tag) => (
             <span key={tag} className="skill-tag">{tag}</span>
